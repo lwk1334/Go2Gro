@@ -15,6 +15,7 @@ if(isset($_POST['update'])){
     $queryUpdate="update members set first_name='$fname',last_name='$lname',email='$email',mobile_number='$mobileno',address='$address', updated_at = '$updatedAt' where member_id='$mid'";
     $resultUpdate = mysqli_query($con, $queryUpdate);
 
+
     
     }
 
