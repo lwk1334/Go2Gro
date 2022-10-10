@@ -40,6 +40,7 @@ $con = mysqli_connect("localhost", "admin", null, "go2gro");
                       <th>Email</th>
                       <th>Mobile Number</th>
                       <th>Address</th>
+                      <th>Add Sale</th>
                       <th>Tools</th>
                     </thead>
                     <tbody>
@@ -62,6 +63,7 @@ $con = mysqli_connect("localhost", "admin", null, "go2gro");
                             <td style='width:150px'>" . $row['email'] . "</td>
                             <td style='width:150px'>" . $row['mobile_number'] . "</td>
                             <td>" . $row['address'] . "</td>
+                            <td style='width:150px'><a href ='sales_new.php?memid=".$row['member_id']."'><button class='btn btn-success btn-sm edit btn-flat' data-id='" . $row['member_id'] . "'><i class='fa fa-shopping-cart'></i> Add Sale</button></a></td>
                             <td style='width:150px'>
                             <a href ='members_edit.php?id=".$row['member_id']."'><button class='btn btn-success btn-sm edit btn-flat' data-id='" . $row['member_id'] . "'><i class='fa fa-edit'></i> Edit</button></a>
                               <button onclick='deleteMember(".$row['member_id'].")' class='btn btn-danger btn-sm delete btn-flat' data-id='" . $row['member_id'] . "'><i class='fa fa-trash'></i> Delete</button>
