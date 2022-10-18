@@ -100,6 +100,7 @@ function(){
 
 });
 
+//if confirm, run php
 function deleteMember(memberID){
   var result = confirm("Are you sure you would like to DELETE this member?");
   if(result){

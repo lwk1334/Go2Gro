@@ -100,6 +100,7 @@ function(){
 
 });
 
+//if confirm, run php
 function deleteEmployees(employeeID){
   var result = confirm("Are you sure you would like to DELETE this employee?");
   if(result){
