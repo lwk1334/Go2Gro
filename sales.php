@@ -103,6 +103,7 @@ $con = mysqli_connect("localhost", "admin", null, "go2gro");
 
       });
 
+      //if confirm, run php
     function deleteSale(saleID) {
       var result = confirm("Are you sure you would like to DELETE this sale?");
       if (result) {
