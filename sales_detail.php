@@ -54,7 +54,7 @@ $result = mysqli_query($con, $query);
 
                             echo "
                             <tr>
-                            <td style='width:150px'>" . $row['product_id'] . "</td>
+                            <td style='width:150px'>" . $row['item_id'] . "</td>
                             <td style='width:120px'>" . $row['quantity'] . "</td>
                             </tr>
                             ";
