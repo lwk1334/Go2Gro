@@ -65,8 +65,8 @@ $result2 = mysqli_query($con, $query2);
                         while ($row2 = mysqli_fetch_array($result2)) {
                         echo "
                         <tr>
-                        <td style='width:150px'><input type='text' class='form-control' id ='old_product_id".$kcounter."' name='old_product_id".$kcounter."' value='" . $row2['product_id'] . "' readonly></td>
-                        <td style='width:150px'><input type='text' class='form-control' id ='product_id".$kcounter."' name='product_id".$kcounter."' value='" . $row2['product_id'] . "'></td>
+                        <td style='width:150px'><input type='text' class='form-control' id ='old_product_id".$kcounter."' name='old_product_id".$kcounter."' value='" . $row2['item_id'] . "' readonly></td>
+                        <td style='width:150px'><input type='text' class='form-control' id ='product_id".$kcounter."' name='product_id".$kcounter."' value='" . $row2['item_id'] . "'></td>
                         <td style='width:120px'><input type='number' class='form-control' id ='quantity".$kcounter."' name='quantity".$kcounter."' value='" . $row2['quantity'] . "'></td>
                         </tr>
                         ";
