@@ -70,6 +70,7 @@ while ($row = mysqli_fetch_array($resultCount)) {
 
                         echo "<div class='form-group'>";
                         echo "<label for='amount_paid' class='col-sm-1 control-label'>Amount Paid: </label><div class='col-sm-3'><input type='text' class='form-control' id ='amount_paid' name='amount_paid'></div>";
+                        echo "<label for='date[]' class='col-sm-2 control-label'>Date: </label><div class='col-sm-3'><input type='date' min='2022-01-02' id ='date' name='date' placeholder='Enter a date' class='form-control'></div>";
                         echo "</div>";
                         
         

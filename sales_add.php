@@ -6,6 +6,7 @@ $con = mysqli_connect("localhost", "admin", null, "go2gro");
     $saleid = $_POST['sale_id'];
     $memberid = $_POST['member_id'];
     $totalpaid = $_POST['amount_paid'];
+    $date = $_POST['date']; 
 
     date_default_timezone_set("Asia/Kuala_Lumpur");
     $createdAt =  date('Y-m-d H:i:s');
@@ -28,7 +29,7 @@ foreach($_POST['itemname'] as $key => $value){
 
 //insert to sales table
 
-$queryAddSales = "INSERT INTO sales values ('$saleid', '$memberid', '$totalpaid', '$createdAt', '$updatedAt')";
+$queryAddSales = "INSERT INTO sales values ('$saleid', '$memberid', '$totalpaid','$createdAt', '$updatedAt', '$date')";
 $resultAddSales = mysqli_query($con, $queryAddSales);
 
 

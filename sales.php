@@ -37,6 +37,8 @@ $con = mysqli_connect("localhost", "admin", null, "go2gro");
                                     <input type="search" onkeyup="searchFunction()" id="search" class="form-control" name="search" placeholder="Search">
                                 </div>
 
+                                
+
                                 <div class="box-body">
                                     <br>&nbsp;<br>
                                     <table id="sales-table" class="table table-bordered">
@@ -44,9 +46,10 @@ $con = mysqli_connect("localhost", "admin", null, "go2gro");
                                             <th>Sale ID:</th>
                                             <th>Member Name:</th>
                                             <th>Amount Paid</th>
+                                            <th>Date</th>
                                             <th>Details</th>
                                             <th>Tools</th>
-                                        </thead>
+                                        </thead>   
                                         <tbody>
                                             <?php
 
@@ -70,6 +73,7 @@ $con = mysqli_connect("localhost", "admin", null, "go2gro");
                             <td style='width:120px'>" . $row['sale_id'] . "</td>
                             <td style='width:150px'>" . $member['first_name'] . " " . $member['last_name'] . "</td>
                             <td style='width:120px'>RM " . number_format($row['price'], 2) . "</td>
+                            <td style='width:120px'>" . $row['date'] . "</td>
                             <td style='width:70px'><a href='sales_detail.php?sid=" . $row['sale_id'] . "' id='saledetails' ><i class='fa fa-info-circle fa-lg'></i></a></td>
                             <td style='width:150px'>
                             <a href ='sales_edit.php?id=" . $row['sale_id'] . "&memid=" . $row['member_id'] . "'><button class='btn btn-success btn-sm edit btn-flat' data-id='" . $row['sale_id'] . "'><i class='fa fa-edit'></i> Edit</button></a>
@@ -84,6 +88,25 @@ $con = mysqli_connect("localhost", "admin", null, "go2gro");
                                             ?>
                                         </tbody>
                                     </table>
+
+                                        <div class="panel-body">
+                                            <form class="clearfix" method="get" action="sales_report.php">
+                                                <div class="form-group">
+                                                    <label class="form-label">Date Range For Sales Report</label>
+                                                    <div class="input-group">
+                                                        <input type="date" class="datepicker form-control" name="start-date" id="start-date" min="2022-01-01" placeholder="From">
+                                                        <span class="input-group-addon"><i class="glyphicon glyphicon-menu-right"></i></span>
+                                                        <input type="date" class="datepicker form-control" name="end-date" id="end-date" min="2022-01-02" placeholder="To">
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <div class="pull-right">
+                                                        <button type="submit" name="submit" class="btn btn-primary">Generate Report</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
                                 </div>
                             </div>
                         </div>
