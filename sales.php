@@ -90,7 +90,7 @@ $con = mysqli_connect("localhost", "admin", null, "go2gro");
                                     </table>
 
                                         <div class="panel-body">
-                                            <form class="clearfix" method="get" action="sales_report.php">
+                                            <form class="clearfix" method="get" action="sales_report_display.php">
                                                 <div class="form-group">
                                                     <label class="form-label">Date Range For Sales Report</label>
                                                     <div class="input-group">
