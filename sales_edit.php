@@ -56,23 +56,39 @@ $result2 = mysqli_query($con, $query2);
                         
                         echo '<table id="orders-table" class="table table-bordered">
                         <thead>
-                            <th>Current Product: </th>
-                            <th>New Product:</th>
+                            <th>Current Item: </th>
+                            <th>New Item:</th>
                             <th>Quantity:</th>
                         </thead>
                         <tbody>';
 
                         while ($row2 = mysqli_fetch_array($result2)) {
+
+                        $ItemID2Name = $row2['item_id'];
+                        $query3 = "SELECT item_name FROM items WHERE item_id = $ItemID2Name";
+                        $result3 = mysqli_query($con, $query3);
+
+                        $queryItem = "SELECT * FROM items";
+                        $resultItem = mysqli_query($con, $queryItem);
+
+                        foreach ($result3 as $item) {
+                            $itemName = $item['item_name'];
+                        }
+                        
                         echo "
                         <tr>
-                        <td style='width:150px'><input type='text' class='form-control' id ='old_product_id".$kcounter."' name='old_product_id".$kcounter."' value='" . $row2['item_id'] . "' readonly></td>
-                        <td style='width:150px'><input type='text' class='form-control' id ='product_id".$kcounter."' name='product_id".$kcounter."' value='" . $row2['item_id'] . "'></td>
+                        <td style='width:150px'><select class='form-control' id ='old_item_id".$kcounter."' name='old_item_id".$kcounter."' required><option value='" . $row2['item_id'] . "' selected>" . $itemName . "</option></select></td>
+                        <td style='width:150px'><select class='form-control' id ='item_id".$kcounter."' name='item_id".$kcounter."' required><option value='" . $row2['item_id'] . "' selected>" . $itemName . "</option>";
+                        foreach ($resultItem as $items) {
+                            echo "<option value='" . $items['item_id'] . "'>" . $items['item_name'] . "</option>";
+                        }
+                        echo "</td>
                         <td style='width:120px'><input type='number' class='form-control' id ='quantity".$kcounter."' name='quantity".$kcounter."' value='" . $row2['quantity'] . "'></td>
                         </tr>
                         ";
                         
                         $kcounter++;
-
+                    
                     }
                     $_SESSION['kcounter'] = $kcounter;
                     echo "</tbody>

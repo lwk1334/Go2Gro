@@ -43,6 +43,9 @@ while ($row = mysqli_fetch_array($resultCount)) {
 
                 <?php
 
+                $queryItem = "SELECT * FROM items";
+                $resultItem = mysqli_query($con, $queryItem);
+
                 if (mysqli_num_rows($result) == 0) {
                     echo "<p>No Sales Found.</p>";
                 } else {
@@ -97,8 +100,13 @@ while ($row = mysqli_fetch_array($resultCount)) {
                         echo "<td><div class='col-sm-offset-1 col-sm-3'><button type='button' name='addField' id='addField' class='btn btn-success'>Add More</button></div></td>";  
                         echo "</tr>"; 
                         echo "<tr>"; 
-                        echo "<td><label for='itemname[]' class='col-sm-2 control-label'>Item 1: </label><div class='col-sm-5'><input type='text' name='itemname[]' placeholder='Enter Item Name' class='form-control name_list' /></td>";  
-                        echo "<td><label for='itemquantity[]' class='col-sm-1 control-label'>Quantity: </label><div class='col-sm-5'><input type='number' name='itemquantity[]' placeholder='Enter Quantity' class='form-control name_list' /></td>";
+                        echo "<td><label for='itemid[]' class='col-sm-2 control-label'>Item 1: </label><div class='col-sm-5'><select class='form-control' id='itemid[]' name='itemid[]' required>"; 
+                        echo '<option value="" selected>- Select -</option>';
+                            foreach ($resultItem as $item) {
+                                echo "<option value='" . $item['item_id'] . "'>" . $item['item_name'] . "</option>";
+                            }
+                        echo "</select></td>";
+                        echo "<td><label for='itemquantity[]' class='col-sm-2 control-label'>Quantity: </label><div class='col-sm-5'><input type='number' name='itemquantity[]' min='0' placeholder='Enter Quantity' class='form-control name_list' /></td>";  
                         echo "</tr>";  
                         echo "</table>";  
                         echo "</div>";  
@@ -127,7 +135,7 @@ while ($row = mysqli_fetch_array($resultCount)) {
  $(document).ready(function(){  
       var i=1;  
       $('#addField').click(function(){  
-           $('#dynamic_field').append('<tr id="row'+i+'"><td><label for="itemname['+i+']" class=" col-sm-2 control-label">Item '+i+': </label><div class="col-sm-5"><input type="text" name="itemname['+i+']" placeholder="Enter Item Name" class="form-control name_list" /></td><td><label for="itemquantity['+i+']" class="col-sm-1 control-label">Quantity: </label><div class="col-sm-5"><input type="number" name="itemquantity['+i+']" placeholder="Enter Quantity" class="form-control name_list" /></td><td><button type="button" name="remove" id="'+i+'" class="btn btn-danger btn_remove">X</button></td></tr>');  
+           $('#dynamic_field').append('<tr id="row'+i+'"><td><label for="itemid['+i+']" class=" col-sm-2 control-label">Item '+i+': </label><div class="col-sm-5"><select class="form-control name_list" id="itemid[]" name="itemid['+i+']" required><option value="" selected>- Select -</option><?php foreach ($resultItem as $item) { ?><option value="<?php echo $item["item_id"]; ?> "> <?php echo $item["item_name"]; ?></option><?php }?></select></td><td><label for="itemquantity['+i+']" class="col-sm-2 control-label">Quantity: </label><div class="col-sm-5"><input type="number" name="itemquantity['+i+']" min="0" placeholder="Enter Quantity" class="form-control name_list" /></td><td><button type="button" name="remove" id="'+i+'" class="btn btn-danger btn_remove">X</button></td></tr>');  
            i++;
         });  
       $(document).on('click', '.btn_remove', function(){  
