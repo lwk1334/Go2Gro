@@ -18,6 +18,7 @@
       <li><a href="members.php"><i class="fa fa-users"></i> <span>Members</span></a></li>
       <li><a href="sales.php"><i class="fa fa-shopping-cart"></i> <span>Sales</span></a></li>
       <li><a href="items.php"><i class="fa fa-file-o"></i> <span>Item List</span></a></li>
+      <li><a href="stocklow.php"><i class="fa fa-shopping-basket"></i> <span>Items Low in Stock</span></a></li>
 
       <li class="header">OTHERS</li>
       <li><a href="logout.php"><i class="fa fa-sign-out"></i> <span>Log Out</span></a></li>

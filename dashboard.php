@@ -116,6 +116,36 @@ $con = mysqli_connect("localhost", "admin", null, "go2gro");
                     </div>
                     <!-- /.row -->
 
+                    <!-- Small boxes (Stat box) -->
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <!-- small box -->
+                            <div class="small-box bg-red">
+                                <div class="inner">
+
+                                    <p>Items Low in Stock</p>
+
+                                    <?php
+                                    $queryStock = "select count(item_id) from items where stock_status <= 10";
+                                    $resultStock = mysqli_query($con, $queryStock);
+                                    while ($StockRow = mysqli_fetch_array($resultStock)) {
+                                        $StockCount = $StockRow["count(item_id)"];
+                                    }
+
+                                    echo "<h3>" . $StockCount . "</h3>";
+                                    ?>
+
+                                </div>
+                                <div class="icon">
+                                    <i class="fa fa-shopping-basket"></i>
+                                </div>
+                                <a href="stocklow.php" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                            </div>
+                        </div>
+                        <!-- ./col -->
+                    </div>
+                    <!-- /.row -->
+
                     </div>
 
                 <?php
