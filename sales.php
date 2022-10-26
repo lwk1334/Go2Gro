@@ -88,12 +88,12 @@ $con = mysqli_connect("localhost", "admin", null, "go2gro");
                                             ?>
                                         </tbody>
                                     </table>
-
+                                        
                                         <div class="panel-body">
                                             <form class="clearfix" method="get" action="sales_report_display.php">
                                                 <div class="form-group">
                                                     <label class="form-label">Date Range For Sales Report</label>
-                                                    <div class="input-group">
+                                                    <div class="input-group ">
                                                         <input type="date" class="datepicker form-control" name="start-date" id="start-date" min="2022-01-01" placeholder="From">
                                                         <span class="input-group-addon"><i class="glyphicon glyphicon-menu-right"></i></span>
                                                         <input type="date" class="datepicker form-control" name="end-date" id="end-date" min="2022-01-02" placeholder="To">
@@ -101,12 +101,13 @@ $con = mysqli_connect("localhost", "admin", null, "go2gro");
                                                 </div>
 
                                                 <div class="form-group">
-                                                    <div class="pull-right">
+                                                    <div class="pull-left">
                                                         <button type="submit" name="submit" class="btn btn-primary">Generate Report</button>
                                                     </div>
                                                 </div>
                                             </form>
                                         </div>
+
                                 </div>
                             </div>
                         </div>
