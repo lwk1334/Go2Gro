@@ -93,7 +93,7 @@
                 
                 <label for="address" class="col-sm-1 control-label">Address</label>
                     <div class="col-sm-5">
-                        <textarea name="address" rows="3" cols="122" required></textarea>
+                        <textarea name="address" rows="5" cols="120" required></textarea>
                     </div>
                     
                 </div>
