@@ -61,7 +61,7 @@ $con = mysqli_connect("localhost", "admin", null, "go2gro");
                                 header('Location: dashboard.php');
                             }
 
-                        $query = "SELECT s.sale_id as 'Sale ID', CONCAT(m.first_name, ' ',m.last_name) as Name, i.item_id as 'Item ID', i.item_name as 'Item Name', mo.quantity as Quantity, mo.quantity * i.price as 'Total Amount', s.date as Date FROM sales s JOIN mem_orders mo ON s.sale_id = mo.sale_id JOIN items i ON mo.item_id = i.item_id JOIN members m ON s.member_id = m.member_id WHERE s.date BETWEEN '".$_SESSION['dateBegin']."' AND '".$_SESSION['dateEnd']."';";
+                        $query = "SELECT s.sale_id as 'Sale ID', CONCAT(m.first_name, ' ',m.last_name) as Name, i.item_id as 'Item ID', i.item_name as 'Item Name', mo.quantity as Quantity, mo.quantity * i.price as 'Total Amount', s.date as Date FROM sales s JOIN mem_orders mo ON s.sale_id = mo.sale_id JOIN items i ON mo.item_id = i.item_id JOIN members m ON s.member_id = m.member_id WHERE s.date BETWEEN '".$_SESSION['dateBegin']."' AND '".$_SESSION['dateEnd']."' ORDER BY s.sale_id;";
 
                         $result =  mysqli_query($con, $query);
                         }
