@@ -67,16 +67,17 @@ $con = mysqli_connect("localhost", "admin", null, "go2gro");
                             $image = (!empty($row['img'])) ? 'images/' . $row['img'] : 'images/noimage.jpg';
                             echo "
                             <tr>
-                            <td style='width:150px'>" . $row['item_name'] . "</td>
+                            <td style='width:120px'>" . $row['item_name'] . "</td>
                             <td style='width:120px'>
                               <img src='" . $image . "' height='60px' width='60px'>
                             </td>
                             <td>" . $row['description'] . "</td>
                             <td style='width:120px'>RM " . number_format($row['price'], 2) . "</td>
                             <td style='width:120px'>" . $row['stock_status'] . "</td>
-                            <td style='width:150px'>
+                            <td style='width:250px'>
                             <a href ='items_edit.php?id=" . $row['item_id'] . "'><button class='btn btn-success btn-sm editItemBtn btn-flat' data-id='" . $row['item_id'] . "'><i class='fa fa-edit'></i> Edit</button></a>
                               <button onclick='deleteProd(" . $row['item_id'] . ")' class='btn btn-danger btn-sm delete btn-flat' data-id='" . $row['item_id'] . "'><i class='fa fa-trash'></i> Delete</button>
+                              <a href ='predict.php?id=" . $row['item_id'] . "'><button class='btn btn-success btn-sm editItemBtn btn-flat' data-id='" . $row['item_id'] . "'><i class='fa fa-bar-chart'></i> Predict</button></a>
                             </td>
                            </tr>
                             ";
