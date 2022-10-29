@@ -92,28 +92,12 @@ $con = mysqli_connect("localhost", "admin", null, "go2gro");
         </div>
     </div>
 
-  <script>
-    document.getElementById('addsale').addEventListener('click',
-      function() {
-        document.querySelector('.bg-modal-addSale').style.display = 'flex';
-
-      });
-
-    function deleteSale(saleID) {
-      var result = confirm("Are you sure you would like to DELETE this sale?");
-      if (result) {
-        window.location = "sales_delete.php?id=" + saleID;
-      }
-    }
-
-</script>
-
     <script>
         function searchFunction() {
             var input, filter, table, tr, td, i;
             input = document.getElementById("search");
             filter = input.value.toUpperCase();
-            table = document.getElementById("sales-table");
+            table = document.getElementById("prediction-table");
             tr = table.getElementsByTagName("tr");
             for (i = 0; i < tr.length; i++) {
                 let rowTds = tr[i].getElementsByTagName("td")
