@@ -88,7 +88,7 @@ $con = mysqli_connect("localhost", "admin", null, "go2gro");
                                             ?>
                                         </tbody>
                                     </table>
-                                        
+                                    <?php if($_SESSION['role'] == 'Manager'){ ?>
                                         <div class="panel-body">
                                             <form class="clearfix" method="get" action="sales_report_display.php">
                                                 <div class="form-group">
@@ -107,7 +107,7 @@ $con = mysqli_connect("localhost", "admin", null, "go2gro");
                                                 </div>
                                             </form>
                                         </div>
-
+                                    <?php } ?>
                                 </div>
                             </div>
                         </div>

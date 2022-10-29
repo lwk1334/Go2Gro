@@ -38,7 +38,7 @@ foreach($_POST['itemid'] as $key => $value){
 
 //insert to sales table
 
-$queryAddSales = "INSERT INTO sales values ('$saleid', '$memberid', '$totalpaid','$date', '$createdAt', '$updatedAt')";
+$queryAddSales = "INSERT INTO sales values ('$saleid', '$memberid', '$totalpaid', '$createdAt', '$updatedAt','$date')";
 $resultAddSales = mysqli_query($con, $queryAddSales);
 
 
