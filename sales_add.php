@@ -6,7 +6,7 @@ $con = mysqli_connect("localhost", "admin", null, "go2gro");
     $saleid = $_POST['sale_id'];
     $memberid = $_POST['member_id'];
     $totalpaid = $_POST['amount_paid'];
-    $date = $_POST['date'];                               
+    $date = date('Y-m-d', strtotime($_POST['date']) );                               
 
     date_default_timezone_set("Asia/Kuala_Lumpur");
     $createdAt =  date('Y-m-d H:i:s');

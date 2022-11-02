@@ -56,6 +56,7 @@ $con = mysqli_connect("localhost", "admin", null, "go2gro");
 
                                             if (mysqli_num_rows($Octresult) == 0) {
                                                 echo "<p>No prediction found.</p>";
+                                                break;
                                             } else {
                                                 while ($row = mysqli_fetch_array($Octresult)) {
                                                     $itemID2Name = $row['item_id'];

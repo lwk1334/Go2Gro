@@ -94,9 +94,9 @@ $con = mysqli_connect("localhost", "admin", null, "go2gro");
                                                 <div class="form-group">
                                                     <label class="form-label">Date Range For Sales Report</label>
                                                     <div class="input-group ">
-                                                        <input type="date" class="datepicker form-control" name="start-date" id="start-date" min="2022-01-01" placeholder="From">
+                                                        <input type="date" class="datepicker form-control" name="start-date" id="start-date" min="2021-01-01" placeholder="From">
                                                         <span class="input-group-addon"><i class="glyphicon glyphicon-menu-right"></i></span>
-                                                        <input type="date" class="datepicker form-control" name="end-date" id="end-date" min="2022-01-02" placeholder="To">
+                                                        <input type="date" class="datepicker form-control" name="end-date" id="end-date" min="2021-01-02" placeholder="To">
                                                     </div>
                                                 </div>
 
@@ -113,8 +113,6 @@ $con = mysqli_connect("localhost", "admin", null, "go2gro");
                         </div>
                     </div>
                 </div>
-
-
 
             </section>
         </div>
