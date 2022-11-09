@@ -52,9 +52,17 @@ $result = mysqli_query($con, $query);
                     echo "<br><br><h3> SALE ID: ".$sid." </h3><br> <br>";
                     while ($row = mysqli_fetch_array($result)) {
 
+                        $itemID2Name = $row['item_id'];
+                        $queryID2Name = "SELECT item_name FROM items WHERE item_id = $itemID2Name";
+                        $resultID2Name = mysqli_query($con, $queryID2Name);
+
+                        foreach ($resultID2Name as $item) {
+                            $itemName = $item['item_name'];
+                          }
+
                             echo "
                             <tr>
-                            <td style='width:150px'>" . $row['item_id'] . "</td>
+                            <td style='width:150px'>" . $itemName . "</td>
                             <td style='width:120px'>" . $row['quantity'] . "</td>
                             </tr>
                             ";
